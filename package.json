@@ -16,11 +16,6 @@
     "test": "jasmine",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,6 +29,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.3",
     "jasmine": "^4.0.2",
     "nodemon": "^2.0.15"
   }
