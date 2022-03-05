@@ -20,6 +20,14 @@
     ],
     "rules": {
     },
+    "overrides": [
+      {
+        "files": "src/**/*.js",
+        "rules": {
+          "quotes": ["error", "single"]
+        }
+      }
+    ],
     "settings": {
       "react": {
         "version": "detect"

@@ -1,13 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.disable('x-powered-by');
 
 //This will create a middleware.
 //When you navigate to the root page, it will use the built react-app
-app.use(express.static(path.resolve(__dirname, "../../build")));
+app.use(express.static(path.resolve(__dirname, '../../build')));
 
 app.use(cors());
 // Tell express to use a JSON parser middleware
