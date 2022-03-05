@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
-        run: eslint src
+      - run: eslint src
 
   notify:
     needs: lint
