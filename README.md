@@ -3,9 +3,9 @@
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=glowkeeper&style=flat)
 
-This repo demonstrates how to deploy an [Express](https://expressjs.com/) server to [Heroku](https://dashboard.heroku.com/apps), which uses the [express.static built-in middleware](https://expressjs.com/en/starter/static-files.html) to serve up a [React](https://reactjs.org/) app built using [Create React App](https://reactjs.org/).
+This repo demonstrates how to deploy an [Express](https://expressjs.com/) server to [Heroku](https://dashboard.heroku.com/apps), which, as well as serving up its own routes, also uses the [express.static built-in middleware](https://expressjs.com/en/starter/static-files.html) to serve up a [React](https://reactjs.org/) app built using [Create React App](https://reactjs.org/).
 
-Additionally, this repo uses [GitHub Actions](https://docs.github.com/en/actions) to deploy the Express server to [Heroku](https://dashboard.heroku.com/apps).
+This repo also demonstrates how to uses [GitHub Actions](https://docs.github.com/en/actions) to deploy the Express server to [Heroku](https://dashboard.heroku.com/apps).
 
 ## Table of Contents
 
