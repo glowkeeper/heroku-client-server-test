@@ -22,28 +22,28 @@ Additionally, this repo uses [GitHub Actions](https://docs.github.com/en/actions
 
 To see the deployed [React](https://reactjs.org/) app' from this repo', visit [https://glowkeeper.herokuapp.com](https://glowkeeper.herokuapp.com/).
 
-To see the deployed [Express](https://expressjs.com/) server serve something other that the react app', visit [https://glowkeeper.herokuapp.com/hello](https://glowkeeper.herokuapp.com/hello).
+To see the deployed Express server serve something other that the react app', visit [https://glowkeeper.herokuapp.com/hello](https://glowkeeper.herokuapp.com/hello).
 
 ## Built Using
 
 + [node](https://nodejs.org/en/)
 + [Express](https://expressjs.com/)
++ [nodemon](https://www.npmjs.com/package/nodemon)
 + [Create React App](https://reactjs.org/)
 + [ESLint](https://eslint.org/)
-+ [Heroku](https://dashboard.heroku.com/apps)
 
 ## Install
 
 1. Clone this repository
 2. In the repository's home directory, type `npm install`
 
-Every time you push to the main branch on GitHub, this repo uses a [GitHub Actions](https://docs.github.com/en/actions) workflow to first run [ESLint](https://eslint.org/), and if that's successful (i.e. if the files in the [src](src) directly lint correctly), it then tries to deploy the Express server to [Heroku](https://dashboard.heroku.com/apps). However, if you've cloned this repo' and wish that to work for you, there's some dependencies to configure beforehand. See below.
+Every time you push to the main branch on GitHub, this repo uses a GitHub Actions workflow to first run `eslint src`, and if that's successful (i.e. if the files in the [src](src) directly lint correctly), it then tries to deploy the Express server to Heroku. However, if you've cloned this repo' and wish that to work for you, there's some dependencies to configure beforehand. See below.
 
 ### Dependencies
 
-For the [Heroku](https://dashboard.heroku.com/apps) deployment to work, you must visit _Account Settings_ in your Heroku account (you have one of those, right?) and scroll to the bottom until you see _API Key_. Copy this key. Now go to your cloned project's repository on GitHub. Go to _Settings_, _Secrets_ and click on _New repository secret_. Then enter _HEROKU_API_KEY_ as the name and paste the copied API Key as the value.
+For the Heroku deployment to work, you must visit _Account Settings_ in your Heroku account (you have one of those, right?) and scroll to the bottom until you see _API Key_. Copy this key. Now go to your cloned project's repository on GitHub. Go to _Settings_, _Secrets_ and click on _New repository secret_. Then enter _HEROKU_API_KEY_ as the name and paste the copied API Key as the value.
 
-Finally, you must configure your [GitHub Actions](https://docs.github.com/en/actions)  workflow [configuration file](/.github/workflows/main.yml) - change the value for _heroku\_app\_name_ to some unique name for your Heroku application (it must be unique otherwise your app will fail to deploy), and change _heroku\_email_ to your email address.
+Finally, you must configure your GitHub Actions workflow [configuration file](/.github/workflows/main.yml) - change the value for _heroku\_app\_name_ to some unique name for your Heroku application (it must be unique otherwise your app will fail to deploy), and change _heroku\_email_ to your email address.
 
 To monitor your newly configured workflow, whenever you push to main on your repository, visit the GitHub repo, and click _Actions_. Then click on the _Deploy_ workflow, and click on the latest workflow run - if you've been fast enough, it should still be running (since the linter has to `npm install`, which should take a minute or two, and the Heroku deploy takes equally as long).
 
