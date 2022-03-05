@@ -20,9 +20,9 @@ This repo also demonstrates how to uses [GitHub Actions](https://docs.github.com
 
 ## Demo
 
-To see the deployed [React](https://reactjs.org/) app' from this repo', visit [https://glowkeeper.herokuapp.com](https://glowkeeper.herokuapp.com/).
+To see the [React](https://reactjs.org/) app' deployed from this repo', visit [https://glowkeeper.herokuapp.com](https://glowkeeper.herokuapp.com/).
 
-To see the deployed Express server serve something other that the react app', visit [https://glowkeeper.herokuapp.com/hello](https://glowkeeper.herokuapp.com/hello).
+To see this repo's deployed Express server serve something other that the react app', visit [https://glowkeeper.herokuapp.com/hello](https://glowkeeper.herokuapp.com/hello).
 
 ## Built Using
 
