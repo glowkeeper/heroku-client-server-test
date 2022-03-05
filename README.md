@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Heroku Deploy Client Server with GitHub Actions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=glowkeeper&style=flat)
 
-## Available Scripts
+This repo demonstrates how to deploy an [Express](https://expressjs.com/) server that uses the [express.static built-in middleware](https://expressjs.com/en/starter/static-files.html) to serve up a [React](https://reactjs.org/) app built using [Create React App](https://reactjs.org/).
 
-In the project directory, you can run:
+Additionally, this repo uses [GitHub Actions](https://docs.github.com/en/actions) so that, when you push to the main branch, it first runs [ESLint](https://eslint.org/), and if that's successful, it then deploys the Express server to [Heroku](https://dashboard.heroku.com/apps).
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Demo](#demo)
+- [Built Using](#built-using)  
+- [Install](#install)
+  - [Dependencies](#dependencies)
+- [Maintainer](#maintainer)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+To see the deployed [React](https://reactjs.org/) app', visit [glowkeeper.herokuapp.com](https://glowkeeper.herokuapp.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built Using
 
-### `npm run build`
++ [node](https://nodejs.org/en/)
++ [Express](https://expressjs.com/)
++ [Create React App](https://reactjs.org/)
++ [ESLint](https://eslint.org/)
++ [Heroku](https://dashboard.heroku.com/apps)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone this repository to your local machine
+2. In the repository's home directory, type `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Every time you push to the main branch on GitHub, this repo uses a [GitHub Actions](https://docs.github.com/en/actions) workflow to first run [ESLint](https://eslint.org/), and if that's successful (i.e. if the files in the [src](src) directly lint correctly), it then deploys the Express server to [Heroku](https://dashboard.heroku.com/apps).
 
-### `npm run eject`
+### Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+For the [Heroku](https://dashboard.heroku.com/apps) deployment to work, you must visit _Account Settings_ in your Heroku account (you have one of those, right?) and scroll to the bottom until you see _API Key_. Copy this key. Now go to your cloned project's repository on GitHub. Go to _Settings_, _Secrets_ and click on _New repository secret_. Then enter _HEROKU_API_KEY_ as the name and paste the copied API Key as the value.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Finally, configure your [GitHub Actions](https://docs.github.com/en/actions)  workflow configuration file, [](/.github/workflows/main.yml); there, change the value for _heroku\_app\_name_ to some unique name for your Heroku application (it must be unique otherwise your app will fail to deploy), and change _heroku\_email_ to your email address.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Maintainer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Steve Huckle](https://glowkeeper.github.io/).
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions welcome - please email the maintainer.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+Creative Commons [Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![CC BY-NC-ND](https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png)
