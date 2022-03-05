@@ -13,6 +13,7 @@ Additionally, this repo uses [GitHub Actions](https://docs.github.com/en/actions
 - [Built Using](#built-using)  
 - [Install](#install)
   - [Dependencies](#dependencies)
+- [Run Locally](#run-locally)  
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
 - [License](#license)
@@ -20,6 +21,8 @@ Additionally, this repo uses [GitHub Actions](https://docs.github.com/en/actions
 ## Demo
 
 To see the deployed [React](https://reactjs.org/) app', visit [glowkeeper.herokuapp.com](https://glowkeeper.herokuapp.com/).
+
+To see the deployed [Express](https://expressjs.com/) server in action, visit [glowkeeper.herokuapp.com/hello](https://glowkeeper.herokuapp.com/hello].
 
 ## Built Using
 
@@ -41,6 +44,10 @@ Every time you push to the main branch on GitHub, this repo uses a [GitHub Actio
 For the [Heroku](https://dashboard.heroku.com/apps) deployment to work, you must visit _Account Settings_ in your Heroku account (you have one of those, right?) and scroll to the bottom until you see _API Key_. Copy this key. Now go to your cloned project's repository on GitHub. Go to _Settings_, _Secrets_ and click on _New repository secret_. Then enter _HEROKU_API_KEY_ as the name and paste the copied API Key as the value.
 
 Finally, configure your [GitHub Actions](https://docs.github.com/en/actions)  workflow configuration file, [](/.github/workflows/main.yml); there, change the value for _heroku\_app\_name_ to some unique name for your Heroku application (it must be unique otherwise your app will fail to deploy), and change _heroku\_email_ to your email address.
+
+## Run Locally
+
+Type `npm run build` to build the react app on your local machine. Type `npm run devstart` to run the express server. Type `npm run lint` to run the linter.
 
 ## Maintainer
 

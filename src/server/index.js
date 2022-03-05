@@ -15,9 +15,9 @@ app.use(express.json());
 // Tell express to use a URL Encoding middleware
 app.use(express.urlencoded({ extended: true }));
 
-// Add your routes here
-
-
+app.get('/hello', (req, res) => {
+  res.send('Hello World!')
+})
 
 // Set up a default "catch all" route to use when someone visits a route
 // that we haven't built
