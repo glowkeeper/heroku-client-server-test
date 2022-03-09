@@ -1,7 +1,7 @@
 /* 
 Simple calculator. 
 Isn't quite right as it doesn't account for operator precedence. 
-(might wan't to consider Reverse Polish as a fix)
+(might wan't to consider Reverse Polish as a fix?)
 */
 
 const parseEquation = (equation) => {

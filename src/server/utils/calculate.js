@@ -1,7 +1,7 @@
 /* 
 Simple calculator. 
 Isn't quite right as it doesn't account for operator precedence. 
-(might wan't to consider Reverse Polish as a fix)
+(might wan't to consider Reverse Polish as a fix?)
 */
 
 const parseEquation = (equation) => {
@@ -51,9 +51,13 @@ const calculation = (operands, operators) => {
     return answer;
 }
 
-const calculator = (equation) => {
+const calculate = (equation) => {
+    // console.log('this', equation)
     const parsed = parseEquation(equation)
-    return calculation(parsed.operands, parsed.operators);
+    if ( parsed.operands && parsed.operators ) {
+        return calculation(parsed.operands, parsed.operators);
+    }
+    return null
 }
 
-module.exports = calculator
+module.exports = calculate

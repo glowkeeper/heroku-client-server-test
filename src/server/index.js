@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+const calculateRouter = require('./routers/calculator');
+
 const app = express();
 app.disable('x-powered-by');
 
@@ -14,6 +16,24 @@ app.use(cors());
 app.use(express.json());
 // Tell express to use a URL Encoding middleware
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/calculator', calculateRouter);
+
+// Error handling middleware
+// eslint-disable-next-line no-unused-vars
+app.use((error, req, res, next) => {
+
+  console.log('Error Handling Middleware called', req.path)
+
+  const statusCode = error.statusCode || 500;
+  const status = error.status || 'error';
+  const message = error.message || 'oops';
+
+  res.status(statusCode).json({
+    status: status,
+    message: message
+  });
+});
 
 app.get('/hello', (req, res) => {
   res.send('Hello World!')
