@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { calculator } from '../utils/calculator.mjs'
+import { calculate } from '../utils/calculate.mjs'
 
 import '../styles/App.css';
 
@@ -15,7 +15,7 @@ export const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const answer = calculator(calculation);
+    const answer = calculate(calculation);
     setAnswer(answer)
   }
 

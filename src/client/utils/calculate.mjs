@@ -51,7 +51,7 @@ const calculation = (operands, operators) => {
     return answer;
 }
 
-export const calculator = (equation) => {
+export const calculate = (equation) => {
     const parsed = parseEquation(equation)
     return calculation(parsed.operands, parsed.operators);
 }
