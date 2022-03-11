@@ -1,9 +1,6 @@
-name: Deploy
+name: PR
 
-on:
-  push:
-    branches:
-      - main
+on: pull_request
 
 jobs:
 
@@ -27,14 +24,3 @@ jobs:
           node-version: '16'
       - run: npm ci
       - run: npm run test
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "project-team-fullstack" #Must be unique in Heroku
-          heroku_email: "edward@boolean.co.uk"
