@@ -38,7 +38,7 @@ To see this repo's deployed Express server serve something other that the react 
 1. Clone this repository
 2. In the repository's home directory, type `npm install`
 
-Every time you push to the main branch on GitHub, this repo uses a GitHub Actions workflow to first run `eslint src`, and if that's successful (i.e. if the files in the [src](src) directly lint correctly), it then tries to deploy the Express server to Heroku. However, if you've cloned this repo' and wish that to work for you, there's some dependencies to configure beforehand. See below.
+Every time you push to the _main_ branch on GitHub, this repo uses a GitHub Actions workflow to first run `npm run lint`, and if that's successful (i.e. if the files in the [src](src) directory lint correctly), it then runs `npm run test`, and if that's successful (i.e. all tests pass), it tries to deploy the Express server to Heroku. However, if you've cloned this repo' and wish that to work for you, there's some dependencies to configure beforehand. See below.
 
 ### Dependencies
 
@@ -46,7 +46,7 @@ For the Heroku deployment to work, you must visit _Account Settings_ in your Her
 
 Finally, you must configure your GitHub Actions workflow [configuration file](/.github/workflows/main.yml) - change the value for _heroku\_app\_name_ to some unique name for your Heroku application (it must be unique otherwise your app will fail to deploy), and change _heroku\_email_ to your email address.
 
-To monitor your newly configured workflow, whenever you push to main on your repository, visit the GitHub repo, and click _Actions_. Then click on the _Deploy_ workflow, and click on the latest workflow run - if you've been fast enough, it should still be running (since the linter has to `npm install`, which should take a minute or two, and the Heroku deploy takes equally as long).
+To monitor your newly configured workflow, whenever you push to main on your repository, visit the GitHub repo, and click _Actions_. Then click on the _Deploy_ workflow, and click on the latest workflow run - if you've been fast enough, it should still be running  (since both the lint and test runs need to has to `npm install`, which should take a minute or two, and the Heroku deploy takes equally as long).
 
 ## Run Locally
 
