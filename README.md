@@ -26,11 +26,12 @@ To see this repo's deployed Express server serve something other that the react 
 
 ## Built Using
 
-+ [node](https://nodejs.org/en/)
-+ [Express](https://expressjs.com/)
-+ [nodemon](https://www.npmjs.com/package/nodemon)
-+ [Create React App](https://reactjs.org/)
-+ [ESLint](https://eslint.org/)
+- [node](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- [Create React App](https://reactjs.org/)
+- [ESLint](https://eslint.org/)
+- [Jasmine](https://jasmine.github.io/)
 
 ## Install
 
@@ -49,7 +50,7 @@ To monitor your newly configured workflow, whenever you push to main on your rep
 
 ## Run Locally
 
-Type `npm run build` to build the react app on your local machine. Type `npm run devstart` to run the express server. Type `npm run lint` to run the linter.
+Type `npm run build` to build the react app on your local machine. Type `npm run devstart` to run the express server. Type `npm run lint` to run the linter. Type `npm run test` to run the tests.
 
 ## Maintainer
 
